@@ -147,7 +147,7 @@ while True:
         i += 1
       solution.insert(0, tree[i]["board"])
     # Here the required steps from start to finish and the required time for the calculation are printed.
-    print(f"Steps: {len(solution)}")
+    print(f"Steps: {len(solution) - 1}")
     endTime = time.time()
     print(f"Time: {endTime - startTime} seconds")
     # Now the solution is written to a JSON file.
