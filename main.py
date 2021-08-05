@@ -113,15 +113,17 @@ def getPossibleMoves(board):
 
 # This function adds a board and a list of possible moves to the tree array.
 def addBranch(board, possibleBoards):
-  global tree
-  if not makeStandard(board) in explored:
-    tree.append({"board": board, "branches": possibleBoards})
-    explored.add(makeStandard(board))
+  global tree, explored
+  branches = [branch for branch in possibleBoards if not makeStandard(branch) in explored]
+  tree.append({"board": board, "branches": branches})
+  explored.add(makeStandard(board))
+  for branch in branches:
+    explored.add(makeStandard(branch))
 
 # This adds the initial board and its possible moves to the tree array.
+explored.add(makeStandard(startBoard))
 possibleBoards = getPossibleMoves(startBoard)
 addBranch(startBoard, possibleBoards)
-
 
 n = 0
 while True:
