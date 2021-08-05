@@ -7,16 +7,6 @@ import numpy as np
 
 from animationFunctions import *
 
-# These are the values for the animation.
-border = 32
-gridSize = 128
-gridSpacing = 8
-width = len(startBoard[0]) * (gridSize + gridSpacing) - gridSpacing + border * 2
-height = len(startBoard) * (gridSize + gridSpacing) - gridSpacing + border * 2
-colors = [(0, 95, 130), (0, 140, 191), (0, 187, 255)]
-showExit = True
-speed = 20
-
 # Quo Vadis
 startBoard = [
   [11, 11, 12, 12, 1],
@@ -50,6 +40,16 @@ startBoard = [
 #   [10, 10, 11, 11, 20],
 #   [13, 13,  1,  0, 20],
 # ]
+
+# These are the values for the animation.
+border = 32
+gridSize = 128
+gridSpacing = 8
+width = len(startBoard[0]) * (gridSize + gridSpacing) - gridSpacing + border * 2
+height = len(startBoard) * (gridSize + gridSpacing) - gridSpacing + border * 2
+colors = [(0, 95, 130), (0, 140, 191), (0, 187, 255)]
+showExit = True
+speed = 20
 
 img = np.zeros((height, width, 3), np.uint8)
 
